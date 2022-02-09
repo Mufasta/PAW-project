@@ -1,10 +1,12 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import './App.css';
+import * as ReactBootStrap from "react-bootstrap";
+import Navbar from './Components/Navbar';
 
 function App() {
   return (
-    <div className="App">
-    
+    <div>
+      <Navbar/>
     </div>
   );
 }
