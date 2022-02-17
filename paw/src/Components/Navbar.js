@@ -4,7 +4,7 @@ import * as ReactBootStrap from "react-bootstrap";
 
 const Navbar = () => {
   return (
-    <ReactBootStrap.Navbar bg="light" expand="lg">
+    <ReactBootStrap.Navbar bg="light" expand="lg" sticky = "top">
         <ReactBootStrap.Container fluid>
             <ReactBootStrap.Navbar.Brand href="#">PAW</ReactBootStrap.Navbar.Brand>
             <ReactBootStrap.Navbar.Toggle aria-controls="navbarScroll" />
