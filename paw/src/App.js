@@ -1,5 +1,4 @@
 import React from 'react';
-import * as ReactBootStrap from "react-bootstrap";
 import Navbar from './Components/Navbar';
 import Home from './Components/Home';
 
