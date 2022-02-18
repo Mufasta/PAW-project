@@ -1,13 +1,25 @@
 import React from 'react';
 import Navbar from './Components/Navbar';
-import Home from './Components/Home';
+import HomePage from './Components/HomePage';
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import AboutPage from './Components/AboutPage';
+import SheltersPage from './Components/SheltersPage';
+import ExpertPage from './Components/ExpertPage';
+import ErrorPage from './Components/ErrorPage';
 
+//to use react router dom: npm install react-router-dom
 function App() {
   return (
-    <div>
+    <Router>
       <Navbar/>
-      <Home />
-    </div>
+      <Routes>
+        <Route path="/" element = {<HomePage/>}/> 
+        <Route path = '/Shelters' element = {<SheltersPage/>}/>
+        <Route path  ='/Expert_Q/A' element = {<ExpertPage/>}/>
+        <Route path ='/About' element = {<AboutPage/>}/>
+        <Route path = '*' element = {<ErrorPage/>}/>{/*Whatever route doesnt't exist */}
+      </Routes>
+    </Router>
   );
 }
 

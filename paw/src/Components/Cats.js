@@ -8,10 +8,11 @@ const Cats = () => {
         <div style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>
             <h1>Search Cat Breeds</h1>
         </div>
-        {/*Search bar video i used https://www.youtube.com/watch?v=x7niho285qs*/}
+        {/*Search bar tutorial used https://www.youtube.com/watch?v=x7niho285qs*/}
         <Searchbar/>
         <div>
-            <h1> </h1>
+          {/*For spacing */}
+          <h1> </h1>
         </div>
         <CardView/>
     </div>
