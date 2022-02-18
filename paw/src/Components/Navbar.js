@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { Children } from 'react'
+import Login from './Login';
 import * as ReactBootStrap from "react-bootstrap";
+import { useState } from 'react';
 
 
 const Navbar = () => {
+    const [popUp, setPopUp] = useState(false);
   return (
     <ReactBootStrap.Navbar bg="light" expand="lg" sticky = "top">
         <ReactBootStrap.Container fluid>
@@ -22,11 +25,13 @@ const Navbar = () => {
                 </ReactBootStrap.NavDropdown>
             </ReactBootStrap.Nav>
                 <ReactBootStrap.Form className="d-flex">
-                    <ReactBootStrap.Button variant="outline-success">Log In / Sign Up</ReactBootStrap.Button>
+                    <ReactBootStrap.Button variant="outline-success" onClick={() => setPopUp(true)}>Log In / Sign Up</ReactBootStrap.Button>
                 </ReactBootStrap.Form>
             </ReactBootStrap.Navbar.Collapse>
         </ReactBootStrap.Container>
+        <Login pop = {popUp} setPopUp = {setPopUp}/>
     </ReactBootStrap.Navbar>
+
   )
 }
 
