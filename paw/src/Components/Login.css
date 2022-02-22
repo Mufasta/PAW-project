@@ -1,0 +1,34 @@
+@media all and (min-width: 480px) {
+    .popUp{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0 , 0 , .2);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .inner-popUp{
+        position: relative;
+        padding: 32px;
+        width: 100%;
+        max-width: 640px;
+        background-color: white;
+    }
+    .Login {
+      padding: 60px 0;
+    }
+  
+    .Login form {
+      margin: 0 auto;
+      max-width: 320px;
+    }
+    .inner-popUp .closeButton{
+      position: absolute;
+      top: 16px;
+      right: 16px;
+    }
+  }
