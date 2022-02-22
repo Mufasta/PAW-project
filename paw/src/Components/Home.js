@@ -2,6 +2,8 @@
 import React, { useRef } from "react";
 import { Button } from 'react-bootstrap'
 import Cats from './Cats'
+import Dogs from './Dogs'
+import background from '../Images/pets.jpg'
 
 const Home = () => {
   //smooth scroll fucntionality
@@ -21,14 +23,15 @@ const Home = () => {
 
 
   return (
-    <div>
+    <div style={{ background: `url(${background})`, backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'top'}}>
         {/* Landing Section */}
-        <div style={{display: 'flex',  justifyContent:'center', alignItems:'center',height: '100vh'}}>
+        <div style={{display: 'flex',  justifyContent:'center', alignItems:'center', height: '100vh'}}>
           <ul>
               <h1>Learn About Specific Breeds</h1>
               <div style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>
-                <Button onClick={gotoCatSection}>Cats</Button>&nbsp;&nbsp;
-                <Button onClick={gotoDogSection}>Dogs</Button>
+                <Button size = "lg" style = {{width: 200, borderRadius: 12, borderColor: '#F7D59C', backgroundColor: '#F7D59C', color: 'black'}} onClick={gotoCatSection}>Cats</Button>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <Button size = "lg" style = {{width: 200, borderRadius: 12, borderColor: '#F7D59C', backgroundColor: '#F7D59C', color: 'black'}} onClick={gotoDogSection}>Dogs</Button>
               </div>
           </ul>
         </div>
@@ -40,7 +43,7 @@ const Home = () => {
         {/*TODO Dogs */}
         <div style={{display: 'flex',  justifyContent:'center', alignItems:'center',height: '100vh'}}>
           <h3 ref = {dogSection}> </h3>{/* reference hook for smooth scroll */}
-          <h1>Dogs Go Here</h1>
+          <Dogs/>
         </div>
 
     </div>

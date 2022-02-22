@@ -5,11 +5,11 @@ import CardView from './CardView';
 const Cats = () => {
   return (
     <div>
-        <div style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>
+        <div style={{display: 'flex',  justifyContent:'center', alignItems:'center', color: 'black'}}>
             <h1>Search Cat Breeds</h1>
         </div>
         {/*Search bar video i used https://www.youtube.com/watch?v=x7niho285qs*/}
-        <Searchbar/>
+        <Searchbar placeholder = "Search Specific Breeds"/>
         <div>
             <h1> </h1>
         </div>
