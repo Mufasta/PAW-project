@@ -7,7 +7,7 @@ import { useState } from 'react';
 const Navbar = () => {
     const [popUp, setPopUp] = useState(false);
   return (
-    <ReactBootStrap.Navbar bg="light" expand="lg" sticky = "top">
+    <ReactBootStrap.Navbar expand="lg" sticky = "top" style = {{backgroundColor: '#F7D59C' }}>
         <ReactBootStrap.Container fluid>
             <ReactBootStrap.Navbar.Brand href="#">PAW</ReactBootStrap.Navbar.Brand>
             <ReactBootStrap.Navbar.Toggle aria-controls="navbarScroll" />
@@ -25,7 +25,7 @@ const Navbar = () => {
                 </ReactBootStrap.NavDropdown>
             </ReactBootStrap.Nav>
                 <ReactBootStrap.Form className="d-flex">
-                    <ReactBootStrap.Button variant="outline-success" onClick={() => setPopUp(true)}>Log In / Sign Up</ReactBootStrap.Button>
+                    <ReactBootStrap.Button variant="outline-success" style = {{color: 'black', borderColor: 'black'}} onClick={({ }) => setPopUp(true)}>Log In / Sign Up</ReactBootStrap.Button>
                 </ReactBootStrap.Form>
             </ReactBootStrap.Navbar.Collapse>
         </ReactBootStrap.Container>
