@@ -1,7 +1,7 @@
 import React from 'react';
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Navbar from './Components/Navbar';
 import HomePage from './Components/HomePage';
-import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import AboutPage from './Components/AboutPage';
 import SheltersPage from './Components/SheltersPage';
 import ExpertPage from './Components/ExpertPage';
