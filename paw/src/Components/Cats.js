@@ -11,7 +11,8 @@ const Cats = () => {
         {/*Search bar video i used https://www.youtube.com/watch?v=x7niho285qs*/}
         <Searchbar placeholder = "Search Specific Breeds"/>
         <div>
-            <h1> </h1>
+          {/*For spacing */}
+          <h1> </h1>
         </div>
         <CardView/>
     </div>
