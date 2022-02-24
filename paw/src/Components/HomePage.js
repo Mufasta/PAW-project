@@ -6,6 +6,7 @@ import Dogs from './Dogs'
 import background from '../Images/pets.jpg'
 
 const Home = () => {
+
   //smooth scroll fucntionality
   const catSection = useRef(null);
   const dogSection = useRef(null);
