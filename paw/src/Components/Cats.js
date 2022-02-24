@@ -3,7 +3,7 @@ import Searchbar from './SearchbarCats';
 import CardView from './CardView';
 
 const Cats = () => {
-  return (
+  return (  
     <div>
         <div style={{display: 'flex',  justifyContent:'center', alignItems:'center', color: 'black'}}>
             <h1>Search Cat Breeds</h1>
@@ -15,6 +15,7 @@ const Cats = () => {
           <h1> </h1>
         </div>
         <CardView/>
+        
     </div>
   )
 }
