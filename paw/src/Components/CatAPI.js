@@ -7,12 +7,6 @@ const api = axios.create({
         'x-api-key': `70333dc8-3e31-4380-b622-48fdc97947cb`        
     }
 })
-const apiImages = axios.create({
-    baseURL: `https://api.thecatapi.com/v1/images/search`,
-    headers: {
-        'x-api-key': `70333dc8-3e31-4380-b622-48fdc97947cb`        
-    }
-})
 
 class CatAPI extends React.Component {
     state = {
@@ -33,12 +27,7 @@ class CatAPI extends React.Component {
             }
             
         })
-        {/*Cant figure out images yet */}
-        apiImages.get('/').then(res =>{
-            if(this.mounted){
-                this.setState({breedImage: res.data})
-            }
-        })
+        
     }
     render() {
       return (
@@ -47,15 +36,16 @@ class CatAPI extends React.Component {
               {this.state.breeds.map(breeds => 
                 
                 <h2 key = {breeds.id}>
-                    <div>
+                    
                         <ul>
                             <div>{breeds.name}</div>
+                            <div>{breeds.description}</div>
                             <div>{breeds.temperament}</div>
-                            <div>{breeds.life_span}</div>
-                            <div><h2>Adaptability: {breeds.adaptability}</h2></div>
-                            <div><h2>Affection Level: {breeds.affection_level}</h2></div>
+                            <div>Average Life Span: {breeds.life_span}</div>
+                            <div>Adaptability: {breeds.adaptability}</div>
+                            <div>Affection Level: {breeds.affection_level}</div>
                         </ul>
-                    </div>
+                    
                 </h2>)}
           </header>
       )

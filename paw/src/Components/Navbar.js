@@ -1,4 +1,4 @@
-import React, { Children } from 'react'
+import React from 'react'
 import Login from './Login';
 import * as ReactBootStrap from "react-bootstrap";
 import { Link } from "react-router-dom";
@@ -27,7 +27,7 @@ const Navbar = () => {
         
             </ReactBootStrap.Nav>
                 <ReactBootStrap.Form className="d-flex">
-                    <ReactBootStrap.Button variant="outline-success" style = {{color: 'black', borderColor: 'black'}} onClick={({ }) => setPopUp(true)}>Log In / Sign Up</ReactBootStrap.Button>
+                    <ReactBootStrap.Button variant="outline-success" style = {{color: 'black', borderColor: 'black'}} onClick={() => setPopUp(true)}>Log In / Sign Up</ReactBootStrap.Button>
                 </ReactBootStrap.Form>
             </ReactBootStrap.Navbar.Collapse>
 
