@@ -10,6 +10,7 @@ import ErrorPage from './Components/ErrorPage';
 //import axios from "axios";
 //import Login from './Components/Login';
 import TemporaryCatsPage from './Components/TemporaryCatsPage';
+import IndividualCatPage from './Components/IndividualCatPage';
 
 //to use react router dom: npm install react-router-dom
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path ='/About' element = {<AboutPage/>}/>
         <Route path = '*' element = {<ErrorPage/>}/>{/*Whatever route doesnt't exist */}
         <Route path = '/Temp' element = {<TemporaryCatsPage/>}/>
+        <Route path = '/UniqueCatBreed' element = {<IndividualCatPage/>}/>
       </Routes>
     </Router>
   );

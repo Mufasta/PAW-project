@@ -1,15 +1,15 @@
 import React from 'react'
+import './temp.css'
+
 
 const Searchbar = ({placeholder, data}) => {
+
   return (
-    <div className='Search' style={{borderRadius: 12, display: 'flex',  justifyContent:'center', alignItems:'center'}}>
+    <div className='Search'>
       <div className = 'SearchInputs'>
         <input type = "text" placeholder = {placeholder}/>
-        <div className='SearchIcon'>
-        </div>
       </div>
       <div className = 'DataResults'>
-
       </div>
     </div>
   )
