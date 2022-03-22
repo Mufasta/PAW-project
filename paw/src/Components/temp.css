@@ -4,6 +4,12 @@
     align-items: center;
     flex-direction: column;
 }
+.dogs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 .cats input{
     margin-top: 20px;
     width: 300px;
@@ -11,7 +17,13 @@
     font-size: 20px;
     padding-left: 10px;
 }
-
+.dogs input{
+    margin-top: 20px;
+    width: 300px;
+    height: 40px;
+    font-size: 20px;
+    padding-left: 10px;
+}
 .dataResult{
     margin-top: 5px;
     width: 300px;

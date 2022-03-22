@@ -1,7 +1,6 @@
 import React from 'react'
 import Searchbar from './SearchbarCats';
 import CardView from './CardView';
-import  {useEffect , useState}  from 'react'
 
 
 const Cats = () => {

@@ -3,6 +3,8 @@ import IndividualCatPage from './IndividualCatPage'
 import { Link } from 'react-router-dom';
 import "./temp.css"
 
+console.log(process.env.REACT_APP_CAT_API_KEY)
+
 const CatAPI = () => {
     const [breeds, setBreeds] = useState([])
     const [searchTerm, setSearchTerm] = useState('')
