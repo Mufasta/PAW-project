@@ -5,6 +5,11 @@
 /.pnp
 .pnp.js
 
+node_modules
+.cache
+babel-loader
+
+
 # testing
 /coverage
 
