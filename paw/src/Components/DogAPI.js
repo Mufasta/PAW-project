@@ -10,7 +10,7 @@ const DogAPI = () => {
         const url = 'https://api.thedogapi.com/v1/breeds'
         fetch(url, {
             headers: {
-                'x-api-key': `ebd93bb8-a342-4dbd-9bcc-58c9156bbe13`
+                'x-api-key': `${process.env.REACT_APP_DOG_API_KEY}`
             }
         }).then(resp => resp.json())
         .then(resp => setBreeds(resp))

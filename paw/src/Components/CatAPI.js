@@ -3,16 +3,15 @@ import IndividualCatPage from './IndividualCatPage'
 import { Link } from 'react-router-dom';
 import "./temp.css"
 
-console.log(process.env.REACT_APP_CAT_API_KEY)
 
 const CatAPI = () => {
-    const [breeds, setBreeds] = useState([])
-    const [searchTerm, setSearchTerm] = useState('')
-    useEffect(() =>{
+    const [breeds, setBreeds] = useState([]) //use states for setting the breeds
+    const [searchTerm, setSearchTerm] = useState('') //empty string to start the search
+    useEffect(() =>{ //Connecting to the API 
         const url = 'https://api.thecatapi.com/v1/breeds'
         fetch(url, {
             headers: {
-                'x-api-key': `70333dc8-3e31-4380-b622-48fdc97947cb`
+                'x-api-key': `${process.env.REACT_APP_CAT_API_KEY}`
             }
         }).then(resp => resp.json())
         .then(resp => setBreeds(resp))
@@ -52,6 +51,8 @@ const CatAPI = () => {
                     </div>
                 </div> 
             )}
+
+
             </div>
 
 
