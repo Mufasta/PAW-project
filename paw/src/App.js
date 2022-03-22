@@ -6,9 +6,14 @@ import AboutPage from './Components/AboutPage';
 import SheltersPage from './Components/SheltersPage';
 import ExpertPage from './Components/ExpertPage';
 import ErrorPage from './Components/ErrorPage';
-import { useState } from 'react'
-import axios from "axios";
-import Login from './Components/Login';
+//import { useState } from 'react'
+//import axios from "axios";
+//import Login from './Components/Login';
+import TemporaryCatsPage from './Components/TemporaryCatsPage';
+import IndividualCatPage from './Components/IndividualCatPage';
+import TemporaryDogsPage from './Components/TemporaryDogsPage';
+import IndividualDogPage from './Components/IndividualDogPage';
+
 
 //to use react router dom: npm install react-router-dom
 function App() {
@@ -21,6 +26,10 @@ function App() {
         <Route path  ='/Expert_Q/A' element = {<ExpertPage/>}/>
         <Route path ='/About' element = {<AboutPage/>}/>
         <Route path = '*' element = {<ErrorPage/>}/>{/*Whatever route doesnt't exist */}
+        <Route path = '/tempcat' element = {<TemporaryCatsPage/>}/>
+        <Route path = '/tempdog' element = {<TemporaryDogsPage/>}/>
+        <Route path = '/UniqueCatBreed' element = {<IndividualCatPage/>}/>
+        <Route path = '/UniqueDogBreed' element = {<IndividualDogPage/>}/>
       </Routes>
     </Router>
   );

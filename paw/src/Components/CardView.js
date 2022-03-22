@@ -1,6 +1,4 @@
 import React from 'react'
-import * as ReactBootStrap from "react-bootstrap";
-import {Card} from 'react-bootstrap'
 import test from '../Images/blue.png'
 
 const CardView = () => {
