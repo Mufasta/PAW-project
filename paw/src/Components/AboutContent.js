@@ -24,6 +24,6 @@ export const accordionData = [
     },
     {
       title: 'Jaidyn Matamoros',
-      content: `Hey! I am a junior at UTA majoring in Software Engineering. I am passionate for developing software, learning from each new challenge, and of course, I love pets!`
+      content: `Hey! I am a junior at UTA majoring in Software Engineering. I am passionate about developing software and learning from each new challenge presented to me, and of course, I love pets!`
     },
   ];
