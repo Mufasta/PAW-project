@@ -21,7 +21,7 @@ export const accordionData = [
     {
       title: 'Edwin Martinez',
       content: `Hello! I am a junior at UTA (The University of Texas at Arlington) studying Computer Science. I have a passion for helping
-      people in any way shape or form. One fun fact about me is that I love dogs (the fluffy ones!), and I used to have a pitbull when I was younger`
+      people in any way shape or form. One fun fact about me is that I love dogs (the fluffy ones!), and I used to have a pitbull when I was younger.`
     },
     {
       title: 'Jaidyn Matamoros',
