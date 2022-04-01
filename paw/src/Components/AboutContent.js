@@ -12,7 +12,7 @@ export const accordionData = [
     },
     {
       title: 'Marium Mannan',
-      content: `Fill your description here...`
+      content: `Hi! I am a junior studying Software Enineering at UTA. I love all things CS and have a cat called Minibar.`
     },
     {
       title: 'Mustafa Aboul-Jibin',

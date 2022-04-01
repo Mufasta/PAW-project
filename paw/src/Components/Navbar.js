@@ -10,7 +10,8 @@ const Navbar = () => {
   return (
     <ReactBootStrap.Navbar expand="lg" sticky = "top" style = {{backgroundColor: '#F7D59C' }}>
         <ReactBootStrap.Container fluid>
-            
+
+            {/*Link to homepage */}
             <ReactBootStrap.Navbar.Brand as ={Link} to='/'>PAW</ReactBootStrap.Navbar.Brand>
 
             <ReactBootStrap.Navbar.Toggle aria-controls="navbarScroll" />
@@ -20,7 +21,8 @@ const Navbar = () => {
                 style={{ maxHeight: '100px' }}
                 navbarScroll
             >   
-               
+            
+            {/*Rest of the navbar links */}
             <ReactBootStrap.Nav.Link  as ={Link} to='/Shelters'>Shelters</ReactBootStrap.Nav.Link>
             <ReactBootStrap.Nav.Link  as ={Link} to='/Expert_Q/A'>Expert Q/A</ReactBootStrap.Nav.Link>
             <ReactBootStrap.Nav.Link  as ={Link} to='/About'>About</ReactBootStrap.Nav.Link>                
@@ -32,6 +34,7 @@ const Navbar = () => {
             </ReactBootStrap.Navbar.Collapse>
 
         </ReactBootStrap.Container>
+        {/*Pop up menu for login */}
         <Login pop = {popUp} setPopUp = {setPopUp}/>
     </ReactBootStrap.Navbar>
 

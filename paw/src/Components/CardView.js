@@ -3,6 +3,7 @@ import test from '../Images/blue.png'
 
 const CardView = () => {
   return (
+  //FEATURED BREED CARDS
     <div>
         <div className="row row-cols-2 row-cols-sm-4 g-4">
         <div className="col">
