@@ -1,9 +1,10 @@
 /*
-  Will fill the array of the accordionData.
+  accordionData Layout
   Title: Student Name
   Content: Biography of the student
 */
 
+// This is the accordion data passed to the accordion to display Title: Student Name & Content: Biography of the student
 export const accordionData = [
     {
       title: 'Caleb Rivera',
