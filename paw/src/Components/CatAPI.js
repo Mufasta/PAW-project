@@ -1,12 +1,14 @@
 import  {useEffect , useState}  from 'react'
-import IndividualCatPage from './IndividualCatPage'
+import React from 'react'
 import { Link } from 'react-router-dom';
 import "./temp.css"
 
-
 const CatAPI = () => {
+
     const [breeds, setBreeds] = useState([]) //use states for setting the breeds
     const [searchTerm, setSearchTerm] = useState('') //empty string to start the search
+
+    
     //Connecting to the API 
     useEffect(() =>{
         const url = 'https://api.thecatapi.com/v1/breeds'
@@ -37,21 +39,19 @@ const CatAPI = () => {
                     return val
                 }
                 else if(val.name.toLowerCase().includes(searchTerm.toLowerCase())){
+                    console.log(val)
                     return val //filtered value returned based on what you typed
                 }       
             }).map(breed => //Sets up the search functionality - links to specific breeds
-                <div className='breeds' key = {breeds.id}>  
+                <div className='breeds' key = {breed.id}> 
+                    {console.log(breed.name)} 
                     <div className = 'dataItem'> 
                         <Link to = {{
-                            pathname : "/UniqueCatBreed", //takes you to a new page when clicked
-                            state:{
-                                breedname : breed.name /*Trying to pass the breed name here - not working*/
-                            }
+                            pathname : `/UniqueCatBreed/${breed.id}` //takes you to a new page when clicked
                         }}>
                             {/*Displays the breed name */}
                             <p>{breed.name}</p>
                         </Link>
-                        
                     </div>
                 </div> 
             )}
