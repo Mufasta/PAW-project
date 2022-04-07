@@ -37,7 +37,7 @@ const Home = () => {
           </ul>
         </div>
         {/* Cats Section */}
-        <div style={{height:'55vh'}}>
+        <div style={{height:'70vh'}}>
           <h3 ref = {catSection}> </h3>{/* reference hook for smooth scroll */}
           <Cats/>
         </div>

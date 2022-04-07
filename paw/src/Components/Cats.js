@@ -1,6 +1,7 @@
 import React from 'react'
 import Searchbar from './SearchbarCats';
 import CardView from './CardView';
+import CatAPI from './CatAPI';
 
 
 const Cats = () => {
@@ -14,7 +15,7 @@ const Cats = () => {
         </div>
 
         {/*Non functional searchbar */}
-        <Searchbar placeholder = "Search Specific Breeds" />
+        <CatAPI/>
         <div>
           {/*For spacing */}
           <h1> </h1>
