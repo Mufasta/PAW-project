@@ -17,7 +17,8 @@ export const accordionData = [
     },
     {
       title: 'Mustafa Aboul-Jibin',
-      content: `Fill your description here...`
+      content: `I am a senior computer science major at the University of Texas at Arlington. I have a cat named sushi whom me and my family
+      love very much. Some of my hobbies are that I love to play tennis, play chess, and sing.`
     },
     {
       title: 'Edwin Martinez',
