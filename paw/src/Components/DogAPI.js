@@ -1,11 +1,17 @@
 import  {useEffect , useState}  from 'react'
 import IndividualCatPage from './IndividualCatPage'
 import { Link } from 'react-router-dom';
+import ReactDom from "react-dom";
 import "./temp.css"
 
 const DogAPI = () => {
     const [breeds, setBreeds] = useState([]) //use states for setting the breeds
+    //breeds - current state, setBreed - update state -check us
     const [searchTerm, setSearchTerm] = useState('')//empty string to start the search
+    //seartTerm - current state, setSearchTerm - update state
+    //useState - empty string
+    
+
     useEffect(() =>{
         //Connecting to the API 
         const url = 'https://api.thedogapi.com/v1/breeds'
@@ -42,24 +48,18 @@ const DogAPI = () => {
                 <div className='breeds' key = {breeds.id}>  
                     <div className = 'dataItem'>
                         <Link to = {{
-                            pathname : "/UniqueDogBreed", //Sets up the search functionality - links to specific breeds
-                            state:{
-                                breedname : breed.name /*Trying to pass the breed name here - not working*/
-                            }
+                            pathname : `/UniqueDogBreed/${breed.name}`//Sets up the search functionality
                         }}>
                              {/*Displays the breed name */}
                             <p>{breed.name}</p>
                         </Link>
-                        
                     </div>
                 </div> 
             )}
             </div>
-
-
         </div>
-        
     )
 }
+
 
 export default DogAPI

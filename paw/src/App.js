@@ -28,8 +28,8 @@ function App() {
         <Route path = '*' element = {<ErrorPage/>}/>{/*Whatever route doesnt't exist */}
         <Route path = '/tempcat' element = {<TemporaryCatsPage/>}/>
         <Route path = '/tempdog' element = {<TemporaryDogsPage/>}/>
-        <Route path = '/UniqueCatBreed' element = {<IndividualCatPage/>}/>
-        <Route path = '/UniqueDogBreed' element = {<IndividualDogPage/>}/>
+        <Route path = '/UniqueCatBreed/:catId' element = {<IndividualCatPage/>}/>
+        <Route path = '/UniqueDogBreed/:dogId' element = {<IndividualDogPage/>}/>
       </Routes>
     </Router>
   );

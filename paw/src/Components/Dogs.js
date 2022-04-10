@@ -2,6 +2,7 @@ import React from 'react'
 import Searchbar from './SearchbarDogs';
 import CardView from './CardView';
 import  {useEffect , useState}  from 'react'
+import DogAPI from './DogAPI';
 
 
 const Dogs = () => {
@@ -15,7 +16,7 @@ const Dogs = () => {
         </div>
 
         {/*Non functional searchbar */}
-        <Searchbar placeholder = "Search Specific Breeds" />
+        <DogAPI/>
         <div>
           {/*For spacing */}
           <h1> </h1>
