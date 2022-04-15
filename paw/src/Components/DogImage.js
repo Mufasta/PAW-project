@@ -22,7 +22,7 @@ const DogImage = (props) => {
 
     return (
         <>
-            {state.url !== undefined ? <img src={state.url}/> : <p>Loading</p>}
+            {state.url !== undefined ?  <img style = {{borderRadius: 12, borderColor: '#F7D59C', border: '5px solid #555'}} src={state.url}/> : <p>Loading</p>}
         </>
     
     )
