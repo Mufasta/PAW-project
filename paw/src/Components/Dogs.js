@@ -12,17 +12,13 @@ const Dogs = () => {
     <div>
 
         <div style={{display: 'flex',  justifyContent:'center', alignItems:'center', color: 'black'}}>
-            <h1>Search Cat Breeds</h1>
+            <h1>Search Dog Breeds</h1>
         </div>
 
-        {/*Non functional searchbar */}
+        {/* Searchbar and Cards for all cat breeds */}
         <DogAPI/>
         <div>
-          {/*For spacing */}
-          <h1> </h1>
-        </div>
-        {/* Displays featured breeds */}
-        <CardView/>        
+        </div>       
     </div>
   )
 }
