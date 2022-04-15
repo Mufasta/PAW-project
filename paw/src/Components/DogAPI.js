@@ -3,6 +3,7 @@ import IndividualCatPage from './IndividualCatPage'
 import { Link } from 'react-router-dom';
 import ReactDom from "react-dom";
 import "./temp.css"
+import DogImage from './DogImage'
 
 const DogAPI = () => {
     const [breeds, setBreeds] = useState([]) //use states for setting the breeds
@@ -35,7 +36,8 @@ const DogAPI = () => {
                 onChange={event => {setSearchTerm(event.target.value)}}//when a search term is entered it saves it
             />
 
-            <div className='dataResult'>
+            <div className='scrollCards'>
+            <div className='row row-cols-2 row-cols-sm-4 g-4'>
              {/* Filtering the search term with the dog api breed names */}
             {breeds.filter((val) =>{
                 if (searchTerm === ""){//if you havent searched for anyting yet
@@ -45,17 +47,20 @@ const DogAPI = () => {
                     return val //filtered value returned based on what you typed
                 }       
             }).map(breed =>
-                <div className='breeds' key = {breeds.id}>  
-                    <div className = 'dataItem'>
+                <div className='breeds' key = {breeds.id}> 
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                    <div className = 'container'>
+                    <DogImage imgId={breed.reference_image_id}/>
                         <Link to = {{
                             pathname : `/UniqueDogBreed/${breed.name}`//Sets up the search functionality
                         }}>
-                             {/*Displays the breed name */}
-                            <p>{breed.name}</p>
+                             {/*Displays the breed name with a link to their individual page */}
+                            <button style = {{width: 200, borderRadius: 12, borderColor: '#388c97', backgroundColor: '#52B2Bf', color: 'black'}}>{breed.name}</button>
                         </Link>
                     </div>
                 </div> 
             )}
+            </div>
             </div>
         </div>
     )

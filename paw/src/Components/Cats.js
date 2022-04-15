@@ -12,15 +12,10 @@ const Cats = () => {
         <div style={{display: 'flex',  justifyContent:'center', alignItems:'center', color: 'black'}}>
             <h1>Search Cat Breeds</h1> 
         </div>
-
-        {/*Non functional searchbar */}
+        {/* Searchbar and Cards for all cat breeds */}
         <CatAPI/>
         <div>
-          {/*For spacing */}
-          <h1> </h1>
         </div>
-        {/* Displays featured breeds */}
-        {/* <Card/>         */}
     </div>
   )
 }
