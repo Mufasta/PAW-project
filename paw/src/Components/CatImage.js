@@ -1,5 +1,6 @@
 import { useLocation } from 'react-router-dom'
 import React, {useEffect, useState} from "react";
+import notFound from '../Images/catImageNotFound.jpeg'
 
 const CatImage = (props) => {
     const [state, setState] = useState({
@@ -22,7 +23,8 @@ const CatImage = (props) => {
 
     return (
         <>
-            {state.url !== undefined ? <img src={state.url}/> : <p>Loading</p>}
+            {state.url !== undefined ? <img style = {{borderRadius: 12, borderColor: '#F7D59C', border: '5px solid #555'}} src ={state.url}/> : 
+            <img style = {{borderRadius: 12, borderColor: '#F7D59C', border: '5px solid #555'}} src= {notFound}/>}
         </>
     
     )

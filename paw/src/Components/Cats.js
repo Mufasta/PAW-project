@@ -1,6 +1,5 @@
 import React from 'react'
 import Searchbar from './SearchbarCats';
-import CardView from './CardView';
 import CatAPI from './CatAPI';
 
 
@@ -21,7 +20,7 @@ const Cats = () => {
           <h1> </h1>
         </div>
         {/* Displays featured breeds */}
-        <CardView/>        
+        {/* <Card/>         */}
     </div>
   )
 }

@@ -2,6 +2,9 @@ import  {useEffect , useState}  from 'react'
 import React from 'react'
 import { Link } from 'react-router-dom';
 import "./temp.css"
+import CatImage from './CatImage';
+
+var page = 0;
 
 const CatAPI = () => {
 
@@ -21,11 +24,21 @@ const CatAPI = () => {
         .then(resp => setBreeds(resp)) //set the breeds based on the response
     },[])
 
-
+    
+    function incrementPage(){
+        page = page + 8;
+        console.log(page);
+        return page, page + 8;
+    }
+    function getPage(){
+        return page;
+    }
+    console.log("debug", getPage());
     return (
         
         <div className='cats'>
             {/*SearchBar - sets up and empty text box*/}
+            
             <input 
                 type = 'text' 
                 placeholder='Search Cats' //placeholder text visible inside the search bar text box
@@ -33,7 +46,11 @@ const CatAPI = () => {
             />
 
             {/* Filtering the search term with the cat api breed names */}
-            <div className='dataResult'>
+            <div className='scrollCards'>
+            <div className='row row-cols-2 row-cols-sm-4 g-4'>
+            
+        
+            
             {breeds.filter((val) =>{
                 if (searchTerm === ""){ //if you havent searched for anyting yet
                     return val
@@ -43,20 +60,26 @@ const CatAPI = () => {
                     return val //filtered value returned based on what you typed
                 }       
             }).map(breed => //Sets up the search functionality - links to specific breeds
-                <div className='breeds' key = {breed.id}> 
-                    {console.log(breed.name)} 
-                    <div className = 'dataItem'> 
-                        <Link to = {{
-                            pathname : `/UniqueCatBreed/${breed.id}` //takes you to a new page when clicked
-                        }}>
-                            {/*Displays the breed name */}
-                            <p>{breed.name}</p>
-                        </Link>
-                    </div>
-                </div> 
+                
+                <div className='breeds' key = {breed.id}>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <div className='container'>
+                    {/* {console.log(breed.name)}  */}
+                    {console.log(page)}
+                    <CatImage imgId={breed.reference_image_id}/> 
+                    <Link to = {{
+                        pathname : `/UniqueCatBreed/${breed.id}` //takes you to a new page when clicked
+                    }}>
+                        {/*Displays the breed name */}
+                        <button style = {{width: 200, borderRadius: 12, borderColor: '#388c97', backgroundColor: '#52B2Bf', color: 'black'}}>{breed.name}</button>
+                    </Link>
+                </div>
+                </div>
+                
             )}
 
-
+            
+            </div>      
             </div>
 
 
