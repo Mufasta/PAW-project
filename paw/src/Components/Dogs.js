@@ -1,6 +1,5 @@
 import React from 'react'
 import Searchbar from './SearchbarDogs';
-import CardView from './CardView';
 import  {useEffect , useState}  from 'react'
 import DogAPI from './DogAPI';
 
