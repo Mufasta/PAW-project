@@ -1,6 +1,7 @@
 import  {useEffect , useState}  from 'react'
 import { useLocation } from 'react-router-dom'
 import DogImage from './DogImage'
+import ExtraDogInfo from './ExtraDogInfo'
 
 const IndividualDogPage = () => {
     const [breeds, setBreeds] = useState([]) //use states for setting the breeds
@@ -31,6 +32,7 @@ const IndividualDogPage = () => {
                         <h2>{breed.description}</h2>
                         <h3>Life span: {breed.life_span}</h3>
                         <h2>Temperament: {breed.temperament}</h2>
+                        <ExtraDogInfo nameId={breed.name}/>
                         <DogImage imgId={breed.reference_image_id}/>
                     </div>
                 </div> 
