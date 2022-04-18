@@ -1,5 +1,5 @@
-# Paw Project
-----
+# PAW
+
 # Project Description
 Insert here
 
