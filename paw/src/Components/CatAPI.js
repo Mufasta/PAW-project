@@ -50,13 +50,13 @@ const CatAPI = () => {
                 
                 <div className='breeds' key = {breed.id}>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <div className='container'>
+                <div className='container' >
                     <CatImage imgId={breed.reference_image_id}/> 
                     <Link to = {{
                         pathname : `/UniqueCatBreed/${breed.id}` //takes you to a new page when clicked
                     }}>
-                        {/*Displays the breed name with a link to their individual page */}
                         <button style = {{width: 200, borderRadius: 12, borderColor: '#388c97', backgroundColor: '#52B2Bf', color: 'black'}}>{breed.name}</button>
+                    {/*Displays the breed name with a link to their individual page */}
                     </Link>
                 </div>
                 </div>    

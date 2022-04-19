@@ -1,8 +1,11 @@
 // import React from 'react'
 import { useLocation } from 'react-router-dom'
 import React, {useEffect, useState} from "react";
-import CatImage from './CatImage';
+import CatImage from './IndivCatImage';
 import { propTypes } from 'react-bootstrap/esm/Image';
+import emptystar from '../Images/emptystar.png'
+import goldstar from '../Images/goldstar.png'
+import { render } from 'react-dom';
 
 
    
@@ -10,10 +13,8 @@ import { propTypes } from 'react-bootstrap/esm/Image';
 const IndividualCatPage = () => {
     const [breeds, setBreeds] = useState([])
     const location = useLocation();
+    const [isFav,setFav]=useState()
     console.log(location)
-
-    
-
     useEffect(() =>{
         const id = location.pathname.split("/")[2]
         const url = `https://api.thecatapi.com/v1/breeds/search?q=${id}`
@@ -30,21 +31,54 @@ const IndividualCatPage = () => {
 
     },[])
     
+      function handleFavClick(val) {
+        setFav(true)
+        console.warn(true)
+
+      }
     
+      function handleUnfavClick(val) {
+        setFav(false)
+        console.warn(false)
+
+      }
+
     return (
         <>
             {breeds.map(breed => //Sets up the search functionality - links to specific breeds
                 <div className='breeds' key = {breed.id}> 
                     <div className = 'dataItem'> 
                         {/*Displays the breed name */}
-                        <h2>{breed.name}</h2>
-                        <h3>Bred for: {breed.bred_for}</h3>    
-                        <h3>Breed group: {breed.breed_group}</h3>  
-                        <h2>{breed.description}</h2>
-                        <h3>Life span: {breed.life_span}</h3>
-                        <h2>Temperament: {breed.temperament}</h2>
-                        <h2>Image: {breed.reference_image_id}</h2>
-                        <CatImage imgId={breed.reference_image_id}/>
+                        <div>
+                            <h1 style = {{display: 'flex',  justifyContent:'center', alignItems:'center', height: '20vh'}} >{breed.name}</h1>
+                        </div>
+                        <div style={{display: 'flex',  justifyContent:'center', alignItems:'top', marginLeft: '5rem', marginRight: '5rem'}}>
+                            <CatImage imgId={breed.reference_image_id}/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <div>
+                                <div style={{display: 'flex'}}>
+                                        {isFav
+                                            ? <img src = {goldstar} onClick={handleUnfavClick} height = {40}/>
+                                            : <img src = {emptystar} onClick={handleFavClick} height = {40}/>  
+                                        }        
+                                        &nbsp;&nbsp;
+                                    <h2> Favorite</h2>
+                                </div>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <h2>Life span: {breed.life_span}</h2>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <h2>Temperament: {breed.temperament}</h2>
+                            </div>
+                        </div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        {/*<h3>Bred for: {breed.bred_for}</h3> */} 
+                        {/* <h3>Breed group: {breed.breed_group}</h3> */}
+                        <h3 style = {{alignItems: 'center', marginLeft: '5rem', marginRight: '5rem', textAlign: 'center'}} >{breed.description}</h3>
+                     
+                        {/*<h2>Image: {breed.reference_image_id}</h2>*/}
+                       
                     </div>
                 </div> 
                 
