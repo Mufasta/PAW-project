@@ -1,7 +1,7 @@
 import { useLocation } from 'react-router-dom'
 import React, {useEffect, useState} from "react";
 
-const DogImage = (props) => {
+const CatImage = (props) => {
     const [state, setState] = useState({
         url: undefined
     })
@@ -9,7 +9,7 @@ const DogImage = (props) => {
 
     useEffect(() =>{
     const id = props.imgId
-    const url2 = `https://api.thedogapi.com/v1/images/${id}`
+    const url2 = `https://api.thecatapi.com/v1/images/${id}`
         fetch(url2, {
             headers: {
                 'x-api-key': `${process.env.REACT_APP_CAT_API_KEY}`
@@ -22,10 +22,10 @@ const DogImage = (props) => {
 
     return (
         <>
-            {state.url !== undefined ? <img src={state.url}/> : <p>Loading</p>}
+            {state.url !== undefined ? <img src={state.url} height = {400}/> : <p>Loading</p>}
         </>
     
     )
     }
     
-    export default DogImage
+    export default CatImage
