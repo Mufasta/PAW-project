@@ -90,7 +90,7 @@ Marium Mannan ([Cosder](https://github.com/Cosder)) <br>
 Mustafa Aboul-Jibin ([Mustafa](https://github.com/Mufasta)) <br>
 
 # License
-Licensed under [MIT License]()
+Licensed under [MIT License](https://github.com/Mufasta/PAW-project/blob/master/LICENSE)
 
 
 
