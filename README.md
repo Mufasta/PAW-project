@@ -10,7 +10,7 @@ Paw is a website application to help first time pet owners and current pet owner
 4. License <br>
 
 # Project Demo
-Listing it towards the top so people see this first
+![Demo](http://g.recordit.co/BJ6aPylxAf.gif)
 
 # How to install and run the project
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
