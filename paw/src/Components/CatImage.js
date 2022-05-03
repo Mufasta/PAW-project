@@ -22,7 +22,7 @@ const CatImage = (props) => {
 
     return (
         <>
-            {state.url !== undefined ? <img src={state.url}/> : <p>Loading</p>}
+            {state.url !== undefined ? <img src={state.url} /> : <p>Loading</p>}
         </>
     
     )
