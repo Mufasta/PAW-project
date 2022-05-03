@@ -47,7 +47,6 @@ const CatAPI = () => {
                     return val //filtered value returned based on what you typed
                 }       
             }).map(breed => //Sets up the search functionality - links to specific breeds
-                
                 <div className='breeds' key = {breed.id}>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <div className='container' >
