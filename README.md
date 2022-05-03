@@ -1,13 +1,16 @@
 # PAW
 
 # Project Description
-Insert here
+Paw is a website application to help first time pet owners and current pet owners learn more about the different breeds of cats and dogs that will best fit their household. Many households across the world purchase a pet without the proper research resulting in the pet either being not properly taken care of or getting dropped off at the pound. This website helps them make more informed decisions based on specific breed information
 
 # Table of Contents
-Will be a list 
+1. Project Demo <br>
+2. Installation Guide <br>
+3. Credits <br>
+4. License <br>
 
 # Project Demo
-Listing it towards the top so people see this first
+[Demo](http://g.recordit.co/BJ6aPylxAf.gif)
 
 # How to install and run the project
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -80,7 +83,14 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
 # Credits
+Caleb Rivera ([Caleb](https://github.com/CalebRivera)) <br>
+Edwin Martinez ([Edwin](https://github.com/1edwin1)) <br>
+Jaidyn Matamoros ([Jaidyn](https://github.com/JaidynM))<br>
+Marium Mannan ([Cosder](https://github.com/Cosder)) <br>
+Mustafa Aboul-Jibin ([Mustafa](https://github.com/Mufasta)) <br>
 
 # License
+Licensed under [MIT License](https://github.com/Mufasta/PAW-project/blob/master/LICENSE)
+
 
 
