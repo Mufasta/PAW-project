@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { useState } from 'react';
 import { auth } from "../firebase-config"
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged, signOut } from "firebase/auth";
+import pawlogo from '../Images/pawlogo2.png'
 
 const Navbar = (props) => {
     const [popUp, setPopUp] = useState(false);
@@ -23,8 +24,9 @@ const Navbar = (props) => {
               <ReactBootStrap.Container fluid>
 
                   {/*Link to homepage */}
-                  <ReactBootStrap.Navbar.Brand as={Link} to='/'>PAW</ReactBootStrap.Navbar.Brand>
-
+                  <ReactBootStrap.Navbar.Brand as ={Link} to='/'>
+                        <img src= {pawlogo} height = {50} paddingy = {0}/>
+                     </ReactBootStrap.Navbar.Brand>
                   <ReactBootStrap.Navbar.Toggle aria-controls="navbarScroll" />
                   <ReactBootStrap.Navbar.Collapse id="navbarScroll">
                       <ReactBootStrap.Nav

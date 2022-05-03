@@ -1,4 +1,4 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+ See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # api keys
 .env
@@ -47,3 +47,21 @@ paw/node_modules/.cache/default-development/index.pack
 paw/node_modules/.cache/default-development/5.pack
 paw/node_modules/.cache/default-development/1.pack
 paw/node_modules/.cache/.eslintcache
+paw/node_modules/.cache/.eslintcache
+paw/node_modules/.cache/default-development/0.pack
+paw/node_modules/.cache/default-development/1.pack
+paw/node_modules/.cache/default-development/2.pack
+paw/node_modules/.cache/default-development/3.pack
+paw/node_modules/.cache/default-development/4.pack
+paw/node_modules/.cache/default-development/5.pack
+paw/node_modules/.cache/default-development/6.pack
+paw/node_modules/.cache/default-development/7.pack
+paw/node_modules/.cache/default-development/8.pack
+paw/node_modules/.cache/default-development/9.pack
+paw/node_modules/.cache/default-development/10.pack
+paw/node_modules/.cache/default-development/11.pack
+paw/node_modules/.cache/default-development/12.pack
+paw/node_modules/.cache/default-development/13.pack
+paw/node_modules/.cache/default-development/14.pack
+paw/node_modules/.cache/default-development/index.pack
+paw/node_modules/.cache/default-development/index.pack.old
