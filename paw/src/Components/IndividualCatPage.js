@@ -6,15 +6,20 @@ import { propTypes } from 'react-bootstrap/esm/Image';
 import emptystar from '../Images/emptystar.png'
 import goldstar from '../Images/goldstar.png'
 import { render } from 'react-dom';
+import { signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged, signOut } from "firebase/auth";
+import { auth } from "../firebase-config"
+import { getDatabase, ref, set } from "firebase/database"
 
-
-   
-
-const IndividualCatPage = () => {
+const IndividualCatPage = (props) => {
     const [breeds, setBreeds] = useState([])
     const location = useLocation();
-    const [isFav,setFav]=useState()
-    console.log(location)
+    const [isFav,setFav]=useState();
+    const [user, setUser] = useState("")
+    console.log(location);
+
+    onAuthStateChanged(auth, (currentUser) => {
+        setUser(currentUser)
+    })
     useEffect(() =>{
         const id = location.pathname.split("/")[2]
         const url = `https://api.thecatapi.com/v1/breeds/search?q=${id}`
@@ -34,6 +39,13 @@ const IndividualCatPage = () => {
       function handleFavClick(val) {
         setFav(true)
         console.warn(true)
+        const db = getDatabase();
+        // const user = props.currentUser
+        // console.log(user)
+        set(ref(db, 'users/' + user.uid), {
+            apikey: val
+        });
+        console.log("added to database.")
 
       }
     
@@ -60,8 +72,8 @@ const IndividualCatPage = () => {
                             <div>
                                 <div style={{display: 'flex'}}>
                                         {isFav
-                                            ? <img src = {goldstar} onClick={handleUnfavClick} height = {40}/>
-                                            : <img src = {emptystar} onClick={handleFavClick} height = {40}/>  
+                                            ? <img src = {goldstar} onClick={() => handleUnfavClick(breed.id)} height = {40}/>
+                                        : <img src={emptystar} onClick={() => handleFavClick(breed.id)} height = {40}/>  
                                         }        
                                         &nbsp;&nbsp;
                                     <h2 className="fw-bolder"> Favorite</h2>
