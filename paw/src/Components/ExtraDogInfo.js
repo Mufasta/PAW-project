@@ -19,14 +19,14 @@ const ExtraDogInfo = (props) => {
     if(breeds[0] === undefined){
         return (
             <>
-            <h2>first if</h2>
+            {/*<h2>first if</h2>*/}
             <h2>No Description</h2>
             </>
         )
     }else{
         return(
             <>
-            <h2>second if</h2>
+            {/*<h2>second if</h2>*/}
             {breeds[0].description === undefined ? <h2>No Description</h2>:<h2>{breeds[0].description} </h2> }
             </>
         )

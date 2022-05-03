@@ -3,8 +3,8 @@ import Login from './Login';
 import * as ReactBootStrap from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useState } from 'react';
-import { signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "../firebase-config"
+import { signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged, signOut } from "firebase/auth";
 
 const Navbar = (props) => {
     const [popUp, setPopUp] = useState(false);

@@ -44,7 +44,7 @@ const IndividualDogPage = () => {
                     <div className = 'dataItem'> 
                         {/*Displays the breed name */}
                         <div>
-                            <h1 style = {{display: 'flex',  justifyContent:'center', alignItems:'center', height: '20vh'}} >{breed.name}</h1>
+                            <h1 style = {{display: 'flex',  justifyContent:'center', alignItems:'center', height: '20vh'}} className="text-decoration-underline">{breed.name}</h1>
                         </div>
                         <div style={{display: 'flex',  justifyContent:'center', alignItems:'top', marginLeft: '5rem', marginRight: '5rem'}}>
                             <DogImage imgId={breed.reference_image_id}/>
@@ -58,24 +58,24 @@ const IndividualDogPage = () => {
                                             : <img src = {emptystar} onClick={handleFavClick} height = {40}/>  
                                         } 
                                         &nbsp;&nbsp;
-                                        <h2> Favorite</h2>
+                                        <h2 className="fw-bolder"> Favorite</h2>
                                 </div>
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <h2>Life span: {breed.life_span}</h2>
+                                    <h2 className="fw-bolder">Life span:</h2> <h2 className="fw-normal">{breed.life_span}</h2>
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <h2>Bred for: {breed.bred_for}</h2> 
+                                    <h2 className="fw-bolder">Bred for:</h2> <h2 className="fw-normal">{breed.bred_for}</h2> 
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <h2>Breed group: {breed.breed_group}</h2> 
+                                    <h2 className="fw-bolder">Breed group:</h2> <h2 className="fw-normal">{breed.breed_group}</h2> 
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <h2>Temperament: {breed.temperament}</h2>  
+                                    <h2 className="fw-bolder" >Temperament:</h2> <h2 className="fw-normal"> {breed.temperament}</h2>
                                     {/* Added this portion to show extra dog info */}
-                                    <h2>Testing!!!!</h2>
-                                    <ExtraDogInfo nameId={breed.name}/>
+                                    {/*<h2>Testing!!!!</h2>*/}
                             </div>
                         </div> 
                         &nbsp;&nbsp;&nbsp;&nbsp;
-                        <h3 style = {{alignItems: 'center', marginLeft: '5rem', marginRight: '5rem', textAlign: 'center'}} >{breed.description}</h3>
-
+                        <div style = {{alignItems: 'center', marginLeft: '5rem', marginRight: '5rem', textAlign: 'center'}}>
+                            <ExtraDogInfo nameId={breed.name}/>
+                        </div>
                     </div>
                 </div>
             )}
