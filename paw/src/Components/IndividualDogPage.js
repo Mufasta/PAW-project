@@ -1,5 +1,6 @@
 import  {useEffect , useState}  from 'react'
 import { useLocation } from 'react-router-dom'
+import ExtraDogInfo from './ExtraDogInfo'
 import DogImage from './IndivDogImage'
 import emptystar from '../Images/emptystar.png'
 import goldstar from '../Images/goldstar.png'
