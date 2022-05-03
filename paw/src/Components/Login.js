@@ -8,9 +8,6 @@ import { propTypes } from 'react-bootstrap/esm/Image';
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged, signOut } from "firebase/auth";
 import {auth} from "../firebase-config"
 import { async } from '@firebase/util';
-import Navbar from './Navbar';
-import { getDatabase, ref, set } from "firebase/database"
-import IndividualCatPage from './IndividualCatPage';
 
 function Login(props) {
     const [email, setEmail] = useState("");
@@ -21,10 +18,6 @@ function Login(props) {
 
     onAuthStateChanged(auth, (currentUser)=>{
         setUser(currentUser)
-        if (currentUser){
-            console.log("logged in")
-            passCurrentUserState()
-        }
     })
     function validateFormLogin() {
         return email.length > 0 && password.length > 0;
@@ -39,9 +32,7 @@ function Login(props) {
             props.setPopUp(false)
         }
         catch(error){
-            if(error === 'auth/user-not-found'){
-                console.log("did not create it")
-            }
+            console.log("did not create it")
         }
     }
     function handleSubmitRegister(event) {
@@ -57,13 +48,6 @@ function Login(props) {
     function handleSignOut(){
         signOut(auth);
     };
-    function passCurrentUserState(){
-        <div>
-            <Navbar currentUser={user} />
-        </div>
-        
-        return null
-    }
   return (props.pop) ? (
       <div className='popUp'>
         <div className='inner-popUp'>
@@ -93,7 +77,6 @@ function Login(props) {
                      <br/>
                      <div onClick={() => setLogin(false)}>Don't have an account? Register</div>
                      <ReactBootStrap.CloseButton className='closeButton' onClick={() => props.setPopUp(false)}/>
-                     {passCurrentUserState()}
                  </Form>
                 ) : (
                     <Form onSubmit={handleSubmitRegister}>

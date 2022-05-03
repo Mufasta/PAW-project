@@ -61,11 +61,7 @@ module.exports = function (data, options) {
             var files = zipEntries.files;
             for (var i = 0; i < files.length; i++) {
                 var input = files[i];
-
-                var unsafeName = input.fileNameStr;
-                var safeName = utils.resolve(input.fileNameStr);
-
-                zip.file(safeName, input.decompressed, {
+                zip.file(input.fileNameStr, input.decompressed, {
                     binary: true,
                     optimizedBinaryString: true,
                     date: input.date,
@@ -75,9 +71,6 @@ module.exports = function (data, options) {
                     dosPermissions: input.dosPermissions,
                     createFolders: options.createFolders
                 });
-                if (!input.dir) {
-                    zip.file(safeName).unsafeOriginalName = unsafeName;
-                }
             }
             if (zipEntries.zipComment.length) {
                 zip.comment = zipEntries.zipComment;

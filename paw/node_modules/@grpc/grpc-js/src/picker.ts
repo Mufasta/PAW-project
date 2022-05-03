@@ -21,7 +21,6 @@ import { Metadata } from './metadata';
 import { Status } from './constants';
 import { LoadBalancer } from './load-balancer';
 import { FilterFactory, Filter } from './filter';
-import { SubchannelInterface } from './subchannel-interface';
 
 export enum PickResultType {
   COMPLETE,
@@ -37,7 +36,7 @@ export interface PickResult {
    * `pickResultType` is COMPLETE. If null, indicates that the call should be
    * dropped.
    */
-  subchannel: SubchannelInterface | null;
+  subchannel: Subchannel | null;
   /**
    * The status object to end the call with. Populated if and only if
    * `pickResultType` is TRANSIENT_FAILURE.
@@ -54,7 +53,7 @@ export interface PickResult {
 
 export interface CompletePickResult extends PickResult {
   pickResultType: PickResultType.COMPLETE;
-  subchannel: SubchannelInterface | null;
+  subchannel: Subchannel | null;
   status: null;
   extraFilterFactories: FilterFactory<Filter>[];
   onCallStarted: (() => void) | null;

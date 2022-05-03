@@ -30,13 +30,13 @@ import {
   PickResultType,
   UnavailablePicker,
 } from './picker';
+import { Subchannel, ConnectivityStateListener } from './subchannel';
 import {
   SubchannelAddress,
   subchannelAddressToString,
 } from './subchannel-address';
 import * as logging from './logging';
 import { LogVerbosity } from './constants';
-import { ConnectivityStateListener, SubchannelInterface } from './subchannel-interface';
 
 const TRACER_NAME = 'round_robin';
 
@@ -67,7 +67,7 @@ class RoundRobinLoadBalancingConfig implements LoadBalancingConfig {
 
 class RoundRobinPicker implements Picker {
   constructor(
-    private readonly subchannelList: SubchannelInterface[],
+    private readonly subchannelList: Subchannel[],
     private nextIndex = 0
   ) {}
 
@@ -88,7 +88,7 @@ class RoundRobinPicker implements Picker {
    * balancer implementation to preserve this part of the picker state if
    * possible when a subchannel connects or disconnects.
    */
-  peekNextSubchannel(): SubchannelInterface {
+  peekNextSubchannel(): Subchannel {
     return this.subchannelList[this.nextIndex];
   }
 }
@@ -102,7 +102,7 @@ interface ConnectivityStateCounts {
 }
 
 export class RoundRobinLoadBalancer implements LoadBalancer {
-  private subchannels: SubchannelInterface[] = [];
+  private subchannels: Subchannel[] = [];
 
   private currentState: ConnectivityState = ConnectivityState.IDLE;
 
@@ -121,7 +121,7 @@ export class RoundRobinLoadBalancer implements LoadBalancer {
       [ConnectivityState.TRANSIENT_FAILURE]: 0,
     };
     this.subchannelStateListener = (
-      subchannel: SubchannelInterface,
+      subchannel: Subchannel,
       previousState: ConnectivityState,
       newState: ConnectivityState
     ) => {

@@ -15,7 +15,7 @@
  *
  */
 
-import { ConnectionOptions, createSecureContext, PeerCertificate, SecureContext } from 'tls';
+import { ConnectionOptions, createSecureContext, PeerCertificate } from 'tls';
 
 import { CallCredentials } from './call-credentials';
 import { CIPHER_SUITES, getDefaultRootsData } from './tls-helpers';
@@ -110,7 +110,6 @@ export abstract class ChannelCredentials {
    * @param rootCerts The root certificate data.
    * @param privateKey The client certificate private key, if available.
    * @param certChain The client certificate key chain, if available.
-   * @param verifyOptions Additional options to modify certificate verification
    */
   static createSsl(
     rootCerts?: Buffer | null,
@@ -131,33 +130,12 @@ export abstract class ChannelCredentials {
         'Certificate chain must be given with accompanying private key'
       );
     }
-    const secureContext = createSecureContext({
-      ca: rootCerts ?? getDefaultRootsData() ?? undefined,
-      key: privateKey ?? undefined,
-      cert: certChain ?? undefined,
-      ciphers: CIPHER_SUITES,
-    });
     return new SecureChannelCredentialsImpl(
-      secureContext,
-      verifyOptions ?? {}
+      rootCerts || getDefaultRootsData(),
+      privateKey || null,
+      certChain || null,
+      verifyOptions || {}
     );
-  }
-
-  /**
-   * Return a new ChannelCredentials instance with credentials created using
-   * the provided secureContext. The resulting instances can be used to
-   * construct a Channel that communicates over TLS. gRPC will not override
-   * anything in the provided secureContext, so the environment variables
-   * GRPC_SSL_CIPHER_SUITES and GRPC_DEFAULT_SSL_ROOTS_FILE_PATH will
-   * not be applied.
-   * @param secureContext The return value of tls.createSecureContext()
-   * @param verifyOptions Additional options to modify certificate verification
-   */
-  static createFromSecureContext(secureContext: SecureContext, verifyOptions?: VerifyOptions): ChannelCredentials {
-    return new SecureChannelCredentialsImpl(
-      secureContext,
-      verifyOptions ?? {}
-    )
   }
 
   /**
@@ -173,7 +151,7 @@ class InsecureChannelCredentialsImpl extends ChannelCredentials {
     super(callCredentials);
   }
 
-  compose(callCredentials: CallCredentials): never {
+  compose(callCredentials: CallCredentials): ChannelCredentials {
     throw new Error('Cannot compose insecure credentials');
   }
 
@@ -192,10 +170,18 @@ class SecureChannelCredentialsImpl extends ChannelCredentials {
   connectionOptions: ConnectionOptions;
 
   constructor(
-    private secureContext: SecureContext,
+    private rootCerts: Buffer | null,
+    private privateKey: Buffer | null,
+    private certChain: Buffer | null,
     private verifyOptions: VerifyOptions
   ) {
     super();
+    const secureContext = createSecureContext({
+      ca: rootCerts || undefined,
+      key: privateKey || undefined,
+      cert: certChain || undefined,
+      ciphers: CIPHER_SUITES,
+    });
     this.connectionOptions = { 
       secureContext
     };
@@ -224,10 +210,19 @@ class SecureChannelCredentialsImpl extends ChannelCredentials {
       return true;
     }
     if (other instanceof SecureChannelCredentialsImpl) {
+      if (!bufferOrNullEqual(this.rootCerts, other.rootCerts)) {
+        return false;
+      }
+      if (!bufferOrNullEqual(this.privateKey, other.privateKey)) {
+        return false;
+      }
+      if (!bufferOrNullEqual(this.certChain, other.certChain)) {
+        return false;
+      }
       return (
-        this.secureContext === other.secureContext && 
-        this.verifyOptions.checkServerIdentity === other.verifyOptions.checkServerIdentity
-        );
+        this.verifyOptions.checkServerIdentity ===
+        other.verifyOptions.checkServerIdentity
+      );
     } else {
       return false;
     }
