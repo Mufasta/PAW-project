@@ -68,6 +68,9 @@ const IndividualDogPage = () => {
                                     <h2>Breed group: {breed.breed_group}</h2> 
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     <h2>Temperament: {breed.temperament}</h2>  
+                                    {/* Added this portion to show extra dog info */}
+                                    <h2>Testing!!!!</h2>
+                                    <ExtraDogInfo nameId={breed.name}/>
                             </div>
                         </div> 
                         &nbsp;&nbsp;&nbsp;&nbsp;
