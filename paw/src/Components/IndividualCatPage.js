@@ -50,7 +50,7 @@ const IndividualCatPage = () => {
                     <div className = 'dataItem'> 
                         {/*Displays the breed name */}
                         <div>
-                            <h1 style = {{display: 'flex',  justifyContent:'center', alignItems:'center', height: '20vh'}} >{breed.name}</h1>
+                            <h1 style = {{display: 'flex',  justifyContent:'center', alignItems:'center', height: '20vh'}} className="text-decoration-underline">{breed.name}</h1>
                         </div>
                         <div style={{display: 'flex',  justifyContent:'center', alignItems:'top', marginLeft: '5rem', marginRight: '5rem'}}>
                             <CatImage imgId={breed.reference_image_id}/>
@@ -64,12 +64,12 @@ const IndividualCatPage = () => {
                                             : <img src = {emptystar} onClick={handleFavClick} height = {40}/>  
                                         }        
                                         &nbsp;&nbsp;
-                                    <h2> Favorite</h2>
+                                    <h2 className="fw-bolder"> Favorite</h2>
                                 </div>
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <h2>Life span: {breed.life_span}</h2>
+                                    <h2 className="fw-bolder">Life span:</h2> <h2 className="fw-normal">{breed.life_span}</h2>
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <h2>Temperament: {breed.temperament}</h2>
+                                    <h2 className="fw-bolder" >Temperament:</h2> <h2 className="fw-normal"> {breed.temperament}</h2>
                             </div>
                         </div>
                         &nbsp;&nbsp;&nbsp;&nbsp;

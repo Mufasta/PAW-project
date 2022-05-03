@@ -14,6 +14,7 @@ const SheltersPage = () => {
       console.warn(val.target.value)
       setData(val.target.value)
     }
+  const [errorMessage, setErrorMessage] = useState('');
   return (    
     //Layout of the shelter page
     <div>
@@ -55,12 +56,21 @@ const SheltersPage = () => {
           style = {{paddingy: '10', width: 200, borderRadius: 12, borderColor: '#F7D59C', backgroundColor: '#F7D59C', color: 'black'}} 
           onClick={() => {
              {/*a new window opens with the link below, the data variable is whatever number the user inputted into the textbox*/}
-              window.open(
-              'https://www.google.com/maps/search/'+data+'+animal+shelters',
-              '_blank'
-              );
+              if(!isNaN(data) && data.length == 5)
+              {
+                window.open(
+                  'https://www.google.com/maps/search/animal+shelters+near+'+data,
+                  '_blank'
+                  );
+                  setErrorMessage('');
+              }
+              else
+              {
+                setErrorMessage('Please input a correct zipcode!');
+              }
           }} >Enter</Button>
     </div>
+    <p className="error"style = {{display: 'flex', justifyContent: 'center', alignItems:'center'}} > {errorMessage} </p>
      {/*More headers to introduce the requirements section*/}
     <div style={{display: 'flex',  justifyContent:'center', alignItems:'center', height: '10vh'}}>
       <h4>Pet adoption requirements can vary depening on location.</h4>
